@@ -9,7 +9,7 @@
 
 @implementation UIImage (TEAddBundle)
 
-- (UIImage *)bundle_imageNamed:(NSString *)imageName {
++ (UIImage *)bundle_imageNamed:(NSString *)imageName {
     NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
                             stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
     NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
