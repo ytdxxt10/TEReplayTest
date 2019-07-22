@@ -29,7 +29,7 @@
     UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
                                 inBundle:resource_bundle
            compatibleWithTraitCollection:nil];
-    UIImage *resultImage = [[[TEImageTool alloc]init] bundle_imageNamed:@"newplayer_tanchu"];
+    UIImage *resultImage = [[TEImageTool shareManager] bundle_imageNamed:@"newplayer_tanchu"];
     
     NSLog(@"--%@",resultImage);
     UIImageView *testImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 80, 100, 100)];

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TEImageTool : NSObject
++ (instancetype)shareManager;
 - (UIImage *)bundle_imageNamed:(NSString *)imageName;
 
 @end
