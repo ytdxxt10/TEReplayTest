@@ -6,7 +6,7 @@
 //
 
 #import "TETestViewController.h"
-
+#import "UIImage+TEAddBundle.h"
 @interface TETestViewController ()
 
 @end
@@ -16,20 +16,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor greenColor];
 
     [self testImage];
 }
 
 - (void)testImage {
-    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
-                            stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
-    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
-    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
-                                inBundle:resource_bundle
-           compatibleWithTraitCollection:nil];
+//    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+//                            stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
+//    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+//    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
+//                                inBundle:resource_bundle
+//           compatibleWithTraitCollection:nil];newplayer_tanchu
+    UIImage *resultImage = [UIImage bundle_imageNamed:@"bundle_imageNamed"];
     UIImageView *testImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 80, 100, 100)];
-    testImageView.image = image;
+    testImageView.image = resultImage;
     [self.view addSubview:testImageView];
     
 }
