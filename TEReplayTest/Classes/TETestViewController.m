@@ -22,16 +22,24 @@
 }
 
 - (void)testImage {
-//    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
-//                            stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
-//    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
-//    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
-//                                inBundle:resource_bundle
-//           compatibleWithTraitCollection:nil];newplayer_tanchu
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    NSLog(@"self class%@ bundlePath%@",[self class],bundlePath);
+    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
+                                inBundle:resource_bundle
+           compatibleWithTraitCollection:nil];
     UIImage *resultImage = [UIImage bundle_imageNamed:@"newplayer_tanchu"];
+    
+    NSLog(@"--%@",resultImage);
     UIImageView *testImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 80, 100, 100)];
     testImageView.image = resultImage;
     [self.view addSubview:testImageView];
+    
+    UIImageView *rightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(130, 80, 100, 100)];
+    rightImageView.image = image;
+    [self.view addSubview:rightImageView];
+    
     
 }
 
