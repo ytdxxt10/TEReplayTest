@@ -16,6 +16,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor yellowColor];
+
+    [self testImage];
+}
+
+- (void)testImage {
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/TEReplayTest.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
+                                inBundle:resource_bundle
+           compatibleWithTraitCollection:nil];
+    UIImageView *testImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 80, 100, 100)];
+    testImageView.image = image;
+    [self.view addSubview:testImageView];
+    
 }
 
 /*
