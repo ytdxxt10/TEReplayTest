@@ -28,7 +28,7 @@
 //    UIImage *image = [UIImage imageNamed:@"newplayer_tanchu"
 //                                inBundle:resource_bundle
 //           compatibleWithTraitCollection:nil];newplayer_tanchu
-    UIImage *resultImage = [UIImage bundle_imageNamed:@"bundle_imageNamed"];
+    UIImage *resultImage = [UIImage bundle_imageNamed:@"newplayer_tanchu"];
     UIImageView *testImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 80, 100, 100)];
     testImageView.image = resultImage;
     [self.view addSubview:testImageView];
